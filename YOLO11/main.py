@@ -58,7 +58,7 @@ st.sidebar.header(" Model Configuration")
 model_type = st.sidebar.radio("Select an option", ["Detection", "Classification", "Segmentation"])
 
 # Select confidence value
-confidence_value = float(st.sidebar.slider("Select model confidence value", 25, 100, 70))/100
+confidence_value = float(st.sidebar.slider("Select model confidence value", 25, 100, 60))/100
 
 # Selecting model type
 if model_type == "Detection":
