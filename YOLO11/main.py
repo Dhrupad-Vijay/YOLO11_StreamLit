@@ -1,9 +1,12 @@
 import cv2
+import os
 import streamlit as st
 from pathlib import Path
 import sys
 from ultralytics import YOLO
 from PIL import Image
+
+os.system("apt-get update && apt-get install -y libgl1-mesa-glx libglib2.0-0")
 
 # Get absolute path of the current file
 FILE = Path(__file__).resolve()
