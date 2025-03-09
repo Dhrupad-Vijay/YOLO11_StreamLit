@@ -1,8 +1,8 @@
-import cv2 # type: ignore
+import cv2
 import streamlit as st
 from pathlib import Path
 import sys
-from ultralytics import YOLO # type: ignore
+from ultralytics import YOLO
 from PIL import Image
 
 # Get absolute path of the current file
