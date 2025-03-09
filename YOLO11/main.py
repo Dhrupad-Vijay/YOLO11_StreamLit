@@ -39,7 +39,8 @@ VIDEOS_DICT = {
 # Model Configurations
 MODEL_DIR = ROOT/'weights'
 DETECTION_MODEL = MODEL_DIR/'yolo11n.pt'
-CLASSIFICATION_MODEL = MODEL_DIR/'yolo11n-cls.pt'
+# CLASSIFICATION_MODEL = MODEL_DIR/'yolo11n-cls.pt'
+POSE_ESTIMATION_MODEL = MODEL_DIR/'yolo11n-pose.pt'
 SEGMENTATION_MODEL = MODEL_DIR/'yolo11n-seg.pt'
 
 # Page layout
@@ -55,7 +56,7 @@ st.header("Object detection using YOLO11")
 st.sidebar.header(" Model Configuration")
 
 # Choose Model: Detection, Segmentation or Pose Estimation
-model_type = st.sidebar.radio("Select an option", ["Detection", "Classification", "Segmentation"])
+model_type = st.sidebar.radio("Select an option", ["Detection", "Segmentation", "Pose Estimation"])
 
 # Select confidence value
 confidence_value = float(st.sidebar.slider("Select model confidence value", 25, 100, 60))/100
@@ -63,8 +64,8 @@ confidence_value = float(st.sidebar.slider("Select model confidence value", 25, 
 # Selecting model type
 if model_type == "Detection":
     model_path = Path(DETECTION_MODEL)
-elif model_type == "Classification":
-    model_path = Path(CLASSIFICATION_MODEL)
+elif model_type == "Pose Estimation":
+    model_path = Path(POSE_ESTIMATION_MODEL)
 elif model_type == "Segmentation":
     model_path = Path(SEGMENTATION_MODEL)
 
